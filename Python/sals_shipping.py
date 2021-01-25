@@ -15,10 +15,7 @@
 #
 #
 #change weight here, to identify which shipping option is cheapest
-weight = 0
-
-#ground_shipping
-def ground_shipping(weight):
+def ground_shipping():
   cost = 0
   flat_charge = 20
   if weight > 0 and weight <= 2:
@@ -37,7 +34,7 @@ def ground_shipping(weight):
     return "Error: Enter a Valid Weight"
 
 #drone_shpping
-def drone_shipping(weight):
+def drone_shipping():
   cost = 0
   flat_charge = 0
   if weight > 0 and weight <= 2:
@@ -55,11 +52,11 @@ def drone_shipping(weight):
   else:
     return "Error: Enter a Valid Weight"
 
-ground = ground_shipping(weight)
+ground = ground_shipping()
 premium_ground = 125
-drone = drone_shipping(weight)
+drone = drone_shipping()
 
-def cheapest_shipping(ground, premium_ground, drone):
+def cheapest_shipping():
   if ground < premium_ground and ground < drone:
     return "Ground shipping at a rate of $" + str(ground)
   elif premium_ground < ground and premium_ground < drone:
@@ -69,9 +66,9 @@ def cheapest_shipping(ground, premium_ground, drone):
   else:
     return "Error: Enter a Valid Weight"
 
-cheapest_shipping_option = cheapest_shipping(ground, premium_ground, drone)
+cheapest_shipping_option = cheapest_shipping()
 
-print("The cheapest option for shipping your package is " + str(cheapest_shipping_option))
+print("The cheapest option for shipping your package is ", cheapest_shipping_option)
 #
 #
 #END
